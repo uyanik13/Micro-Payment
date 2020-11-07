@@ -39,3 +39,13 @@ if (!function_exists('generatePaymentWindowUrl')) {
 
 }
 
+if (!function_exists('test')) {
+    function test($accessKey, $baseUrl, $securedParameters, $unsecuredParameters)
+    {
+        $unsealedUrl = rtrim($baseUrl, '?') . '?' . http_build_query($securedParameters, '', '&') . '&seal=&' . http_build_query($unsecuredParameters, '', '&');
+
+        return rtrim(sealUrl($accessKey, $unsealedUrl), '&');
+    }
+
+}
+
