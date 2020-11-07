@@ -1,0 +1,40 @@
+{
+    "version": "0.4.0",
+    "name": "uyanik13/micro-payment",
+    "description": "Micro Payment Laravel",
+    "keywords": ["micro payment"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Ogur Uyanik",
+        "email": "ogur@dijitalreklam.org"
+    }],
+    "require": {
+        "php": ">=7.3",
+        "illuminate/support": "~5.0|6.*|7.*|8.*",
+        "guzzlehttp/guzzle": "~6.0|7.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.*|6.*|8.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "DRO\\MicroPayment\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DRO\\MicroPayment\\MicroPaymentServiceProvider"
+            ],
+            "aliases": {
+                "MP": "DRO\\MicroPayment\\MicroPaymentFacade"
+            }
+        }
+    }
+}
